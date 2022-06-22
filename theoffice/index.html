@@ -432,6 +432,7 @@ function pickQuote(){
         console.log(quote + ".mp3")
         var audio = document.getElementById('audio');
         var source = document.getElementById('audioSource');
+        console.log(quote);
         source.src = escape("../_static/theoffice/" + quote + ".mp3");
         audio.load(); 
 
