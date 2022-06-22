@@ -1,0 +1,10 @@
+ceja
+loguru
+matplotlib
+numpy
+pandas
+pre-commit
+pyspark==2.4.3
+pyvis
+thinc
+# toolbox @ git+https://gitlab.eds.aphp.fr/equipedatascience/toolbox.git

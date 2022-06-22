@@ -1,0 +1,19 @@
+<button type="submit" onclick="UserAction()">Search</button>
+
+<script>function UserAction() {
+        console.log("LA")
+        var req = new XMLHttpRequest();
+        req.responseType = 'json';
+        req.open('GET', "https://officeapi.dev/api/quotes/random/", true);
+        req.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
+        req.setRequestHeader('Access-Control-Allow-Origin', '*');
+        req.onload = function () {
+            console.log("LA");
+            var jsonResponse = req.response;
+            console.log(jsonResponse);
+            // do something with jsonResponse
+        };
+        req.send(null);
+
+    }
+</script>

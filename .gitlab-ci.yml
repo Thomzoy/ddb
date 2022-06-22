@@ -1,0 +1,26 @@
+image: harbor.eds.aphp.fr/public/python:3.7
+
+stages:
+  - Documentation
+  - Pages
+
+Building documentation:
+  stage: Documentation
+  script:
+    - pip --default-timeout=100 install -r requirements_docs.txt
+    - mkdocs build --site-dir documentation
+  artifacts:
+    paths:
+    - documentation
+
+
+pages:
+  stage: Pages
+  only:
+    - master
+  script:
+    - mkdir -p public/report
+    - mv documentation public/documentation
+  artifacts:
+    paths:
+      - public
