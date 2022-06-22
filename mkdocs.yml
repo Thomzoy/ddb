@@ -1,7 +1,7 @@
 site_name: DDB
 
-repo_url: https://gitlab.eds.aphp.fr/ThomasPJ/ddb
-repo_name: DDB
+#repo_url: https://gitlab.eds.aphp.fr/ThomasPJ/ddb
+#repo_name: DDB
 
 theme:
   name: material
@@ -39,7 +39,6 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/vega@5
   - https://cdn.jsdelivr.net/npm/vega-lite@5
   - https://cdn.jsdelivr.net/npm/vega-embed@6
-  - _static/extra.js
   - _static/termynal/termynal.js
 
 plugins:
