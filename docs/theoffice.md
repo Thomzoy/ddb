@@ -5,8 +5,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/1.0.21/jquery.csv.min.js"></script>
 </head>
 
-## A random quote 
-
 <script>
   var quotes = [
     "364 days",
@@ -492,6 +490,8 @@ var videos = [
 ];
 </script>
 
+## A random quote 
+
 <audio title="" id="audio" controls="controls">
   <source id="audioSource" type="audio/mp3" src=""></source>
 </audio>
@@ -507,29 +507,6 @@ var videos = [
 
 <script>
 
-function pickQuoteOld(){
-
-    $.ajax({
-      type: "GET",  
-      url: "../_static/theoffice/quotes.csv",
-      dataType: "text",       
-      success: function(response)  
-      {
-        var quotes = $.csv.toArrays(response);
-        var quote = quotes[Math.floor(Math.random()*quotes.length)];
-        console.log(quote + ".mp3")
-        var audio = document.getElementById('audio');
-        var source = document.getElementById('audioSource');
-        console.log(quote);
-        source.src = escape("../_static/theoffice/" + quote + ".mp3");
-        audio.title = quote;
-        audio.load(); 
-
-        //var quoteTitle = $("#quote-title").html(quote)
-      }   
-    });
-};
-
 function pickQuote(){
 
   var quote = quotes[Math.floor(Math.random()*quotes.length)];
@@ -540,25 +517,6 @@ function pickQuote(){
   source.src = escape("../_static/theoffice/" + quote + ".mp3");
   audio.load(); 
 
-  //var quoteTitle = $("#quote-title").html(quote)
-};
-
-function pickVideoOld(){
-
-    $.ajax({
-      type: "GET",  
-      url: "../_static/theoffice/videos.csv",
-      dataType: "text",       
-      success: function(response)  
-      {
-        var videos = $.csv.toArrays(response);
-        var video = videos[Math.floor(Math.random()*videos.length)];
-        console.log(video)
-        var player = document.getElementById('ytplayer');
-        player.src = "https://www.youtube.com/embed/" + video;
-        console.log(player.src)
-      }   
-    });
 };
 
 function pickVideo(){
@@ -573,7 +531,7 @@ function pickVideo(){
 };
 
 function onLoadFunctions(){
-   pickQuote();
+  pickQuote();
   pickVideo();
 }
 
