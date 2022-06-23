@@ -21,3 +21,4 @@
   [![Image title](_static/toilettes/tuto.jpeg)]()
   <figcaption></figcaption>
 </figure>
+
